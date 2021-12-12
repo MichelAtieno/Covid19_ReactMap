@@ -9,11 +9,11 @@ const Covid19 = () => {
     const [countries, setCountries] = useState([]);
 
     const load = () => {
-        const loadingCountriesTask = new LoadCountriesTask();
-        loadingCountriesTask.load(setCountries);
+        const loadCountriesTask = new LoadCountriesTask();
+        loadCountriesTask.load(setCountries);
     };
     
-    useEffect(load, [] );
+    useEffect(load,[]);
     
     return (
         <div>
@@ -21,7 +21,7 @@ const Covid19 = () => {
             {countries.length === 0 ? (
                 <Loading /> ) : (
             <div>
-                <CovidMap />
+                <CovidMap countries={countries} />
                 <Legend />
             </div> )}
 
