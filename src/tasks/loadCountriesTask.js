@@ -31,13 +31,17 @@ class LoadCountriesTask {
             if (covidCountry != null) {
                 const confirmed = Number(covidCountry.Confirmed);
                 mapCountry.properties.confirmed = confirmed;
-                mapCountry.properties.confirmedText = confirmed;
+                mapCountry.properties.confirmedText = this.#formatNumberWithCommas(confirmed);
             }
         
         }
 
         this.setState(this.mapCountries);
     };
+
+    #formatNumberWithCommas = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 }
 
 
