@@ -1,10 +1,10 @@
-import './App.css';
+import React from 'react';
+import Covid19 from './components/covid19';
+
 
 function App() {
   return (
-    <div className="App">
-      Hello
-    </div>
+   <Covid19 />
   );
 }
 
