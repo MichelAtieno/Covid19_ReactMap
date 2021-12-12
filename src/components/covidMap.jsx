@@ -1,7 +1,15 @@
 import React from 'react';
+import { MapContainer} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
-const CovidMap =() => {
-    return <div>Map</div>;
+const CovidMap =({ countries }) => {
+    console.log(countries);
+    return (
+        <MapContainer style={{ height: "90vh" }} 
+                      zoom={2} 
+                      center={[20, 100]}>
+        </MapContainer>
+    );
 };
 
 export default CovidMap;
